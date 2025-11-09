@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./my-profile.css" />
+    <title>My Profile</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="nav">
+      <div class="nav2">
+        <a href="../../index.html">Home</a>
+        <a href="../add-tip/add-tip.html">Add Tip</a>
+        <a href="../all-tips/all-tips.html">All Tips</a>
+        <a href="./my-profile.html" class="active">My Profile</a>
+        <a href="../register/register.html">Register</a>
+        <a href="../login/login.html">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Sidebar Toggle (for mobile) -->
+    <button class="menu-btn" id="menuBtn">☰</button>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <a href="#">Feed</a>
+      <a href="#">Tips</a>
+      <a href="#">Tipsters</a>
+      <a href="#">Settings</a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <h1 class="page-title">My Profile</h1>
+
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <img src="avatar.jpg" alt="Tipster Avatar" class="profile-avatar" />
+        <div class="profile-info">
+          <h2>TipsterName</h2>
+          <p>Member since: Jan 2022</p>
+          <p>Number of picks: 150</p>
+          <p>ROI: 20%</p>
+          <p>Current rank: 128th</p>
+          <button class="follow-btn">Follow</button>
+        </div>
+      </div>
+
+      <!-- Recent Tips -->
+      <section class="recent-tips">
+        <h2>Recent Tips</h2>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <img src="premier-league.svg" alt="League" class="league-logo" />
+            <div>
+              <h3>Manchester United vs Liverpool</h3>
+              <span class="time">10 mins ago</span>
+            </div>
+          </div>
+
+          <div class="tip-body">
+            <p><strong>Prediction:</strong> Over 2.5 goals</p>
+            <p><strong>Odd:</strong> 1.80</p>
+            <p>
+              <strong>Analysis:</strong> Both of the players are going to attack
+              and strike for the 3 points.
+            </p>
+          </div>
+
+          <div class="tip-footer">
+            <button class="like-btn">👍</button>
+            <button class="dislike-btn">👎</button>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-header">
+            <img src="serie-a.svg" alt="League" class="league-logo" />
+            <div>
+              <h3>Inter vs Juventus</h3>
+              <span class="time">2h ago</span>
+            </div>
+          </div>
+
+          <div class="tip-body">
+            <p><strong>Prediction:</strong> BTTS</p>
+            <p><strong>Odd:</strong> 1.85</p>
+            <p>
+              <strong>Analysis:</strong> Both teams have strong offensive
+              lineups expected to score.
+            </p>
+          </div>
+
+          <div class="tip-footer">
+            <button class="like-btn">👍</button>
+            <button class="dislike-btn">👎</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const menuBtn = document.getElementById("menuBtn");
+
+      menuBtn.addEventListener("click", () => sidebar.classList.toggle("open"));
+    </script>
+  </body>
+</html>
