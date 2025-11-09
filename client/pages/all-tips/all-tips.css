@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0d1b3a;
+  color: white;
+}
+
+.nav {
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1200px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav2 a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav2 a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav2 a.active {
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu-btn {
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none; /* Hidden on desktop */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  background: #1a2a52;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 28, 247, 0.1);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin-left: auto;
+  cursor: pointer;
+  display: none; /* only on mobile */
+}
+
+/* MAIN */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-left: 300px; /* увеличено малко за разстояние между sidebar и съдържанието */
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TIP CARD */
+.tip-card {
+  display: flex;
+  flex-direction: column;
+  background: #182a52;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tip-header {
+  display: flex;
+  gap: 15px;
+}
+
+.avatar-section {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tipster-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tipster-stats span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.follow-btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+}
+
+.tip-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tipster-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.time-posted {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.match-details p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+  }
+  .sidebar {
+    left: -260px;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .close-btn {
+    display: block;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
