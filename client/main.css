@@ -1,7 +1,18 @@
-.nav {
-  background-color: #333;
+body {
+  background-color: #132144;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  padding: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1200px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav2 {
@@ -10,28 +21,82 @@
   align-items: center;
 }
 
-.nav2 div {
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.nav2 a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.nav2 div:hover {
-  background-color: #555;
+.nav2 a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav2 a.active {
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero {
-  background-color: #007bff;
-  color: white;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0d1b3a, #1a2a5c);
+  border-radius: 12px;
   text-align: center;
-  padding: 50px 20px;
-  font-size: 2em;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .latest-tips {
-  padding: 20px;
-  background-color: #f4f4f4;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.5em;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.latest-tips h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.tip-item {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.tip-item:hover {
+  background-color: rgba(255, 28, 247, 0.1);
+  transform: scale(1.02);
+}
+
+p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
