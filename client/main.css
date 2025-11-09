@@ -100,3 +100,73 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.leagues {
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.leagues h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #ff1cf7, #00f0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leagues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.league-card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* .league-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+} */
+
+.league-card span {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.league-card:hover {
+  background-color: rgba(255, 28, 247, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 28, 247, 0.3);
+}
+
+.league-card:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+.league-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%) invert(80%) brightness(1.2);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.league-card:hover img {
+  opacity: 1;
+  filter: grayscale(0%) invert(0%) brightness(1);
+}
