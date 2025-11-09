@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./register.css" />
+    <script src="register.js" defer></script>
+    <title>Register</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav2">
+        <a href="../../index.html">Home</a>
+        <a href="../add-tip/add-tip.html">Add Tip</a>
+        <a href="all-tips.html">All Tips</a>
+        <a href="latest-tips.html">Latest Tips</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="../login/login.html">Log in</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1 class="title">Register</h1>
+      <p>Create your personal account!</p>
+
+      <form id="register" class="form">
+        <label>
+          Username:
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter your username here!"
+            required
+          />
+        </label>
+
+        <label>
+          Email:
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email here!"
+            required
+          />
+        </label>
+
+        <label>
+          Password:
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password here!"
+            required
+          />
+        </label>
+
+        <label>
+          Confirm password:
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password here!"
+            required
+          />
+        </label>
+
+        <button type="submit">Register</button>
+      </form>
+    </main>
+  </body>
+</html>
