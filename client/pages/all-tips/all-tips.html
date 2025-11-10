@@ -7,6 +7,7 @@
     <title>All Football Tips</title>
   </head>
   <body>
+    <!-- NAVBAR -->
     <nav class="nav">
       <div class="nav2">
         <a href="../../index.html">Home</a>
@@ -18,27 +19,24 @@
       </div>
     </nav>
 
-    <!-- Sidebar Toggle (Mobile only) -->
-    <button class="menu-btn" id="menuBtn">☰</button>
-
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
-      <button class="close-btn" id="closeSidebar">×</button>
-      <a href="#">Feed</a>
-      <a href="#">Premier League</a>
-      <a href="#">Italy Serie A</a>
-      <a href="#">Spain La Liga</a>
-      <a href="#">Germany Bundesliga</a>
-      <a href="#">France Ligue 1</a>
-      <a href="#">Other Leagues</a>
-      <a href="#">Tipsters</a>
+      <div class="sidebar_content">
+        <a href="#">Feed</a>
+        <a href="#">Premier League</a>
+        <a href="#">Italy Serie A</a>
+        <a href="#">Spain La Liga</a>
+        <a href="#">Germany Bundesliga</a>
+        <a href="#">France Ligue 1</a>
+        <a href="#">Other Leagues</a>
+        <a href="#">Tipsters</a>
+      </div>
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <main class="main-content" id="mainContent">
       <h1 class="page-title">Current Football Tips</h1>
 
-      <!-- Example Tip Card -->
       <div class="tip-card">
         <div class="tip-header">
           <div class="avatar-section">
@@ -48,12 +46,14 @@
               class="tipster-avatar"
             />
             <div class="tipster-stats">
+              <span class="tipsterName">Tipster1</span>
               <span>Number of picks: 150</span>
               <span>ROI: 20%</span>
               <span>Current rank: 128th</span>
             </div>
             <button class="follow-btn">Follow</button>
           </div>
+
           <div class="tip-info">
             <div class="tipster-name">
               Tipster1 published a new pick
@@ -76,12 +76,12 @@
     <script>
       const sidebar = document.getElementById("sidebar");
       const menuBtn = document.getElementById("menuBtn");
-      const closeBtn = document.getElementById("closeSidebar");
+      const mainContent = document.getElementById("mainContent");
 
-      menuBtn.addEventListener("click", () => sidebar.classList.add("open"));
-      closeBtn.addEventListener("click", () =>
-        sidebar.classList.remove("open")
-      );
+      menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        mainContent.classList.toggle("expanded");
+      });
     </script>
   </body>
 </html>
