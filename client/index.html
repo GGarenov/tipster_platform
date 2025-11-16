@@ -7,63 +7,76 @@
     <title>Home</title>
   </head>
   <body>
-    <nav class="nav">
-      <div class="nav2">
-        <a href="/index.html" class="active">Home</a>
-        <a href="./pages/add-tip/add-tip.html">Add Tip</a>
-        <a href="./pages/all-tips/all-tips.html">All Tips</a>
-        <a href="./pages/my-profile/my-profile.html">My Profile</a>
-        <a href="/pages/register/register.html">Register</a>
-        <a href="./pages/login/login.html">Log in</a>
-      </div>
-    </nav>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar_content">
-        <a href="#">Feed</a>
-        <a href="#">Premier League</a>
-        <a href="#">Italy Serie A</a>
-        <a href="#">Spain La Liga</a>
-        <a href="#">Germany Bundesliga</a>
-        <a href="#">France Ligue 1</a>
-        <a href="#">Other Leagues</a>
-        <a href="#">Tipsters</a>
-      </div>
-    </aside>
+    <div class="page-wrapper">
+      <!-- NAVBAR -->
+      <nav class="nav">
+        <div class="nav2">
+          <a href="/index.html" class="active">Home</a>
+          <a href="./pages/add-tip/add-tip.html">Add Tip</a>
+          <a href="./pages/all-tips/all-tips.html">All Tips</a>
+          <a href="./pages/my-profile/my-profile.html">My Profile</a>
+          <a href="/pages/register/register.html">Register</a>
+          <a href="./pages/login/login.html">Log in</a>
+        </div>
+      </nav>
 
-    <header class="hero">
-      <h1>
-        Welcome to the <span class="highlight">BEST FOOTBALL TIPS</span> online!
-      </h1>
-      <p>Where you can find free and paid tipsters with real statistics.</p>
-    </header>
-    <section class="latest-tips">These are the latest tips</section>
+      <div class="layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <a href="#">Feed</a>
+          <a href="#">Premier League</a>
+          <a href="#">Italy Serie A</a>
+          <a href="#">Spain La Liga</a>
+          <a href="#">Germany Bundesliga</a>
+          <a href="#">France Ligue 1</a>
+          <a href="#">Other Leagues</a>
+          <a href="#">Tipsters</a>
+        </aside>
 
-    <div class="leagues">
-      <div><h1>Betting predictions from your favourite league!</h1></div>
-      <div class="leagues-grid">
-        <div class="league-card">
-          <img src="images/premierleague.svg" alt="Premier League Logo" />
-          <span>Premier League</span>
-        </div>
-        <div class="league-card">
-          <img src="images/seriea.svg" alt="Serie A Logo" />
-          <span>Italy Serie A</span>
-        </div>
-        <div class="league-card">
-          <img src="images/bundesliga.svg" alt="Bundesliga Logo" />
-          <span>Germany Bundesliga</span>
-        </div>
-        <div class="league-card">
-          <img src="images/ligue1.svg" alt="Ligue 1 Logo" />
-          <span>France Ligue1</span>
-        </div>
-        <div class="league-card">
-          <img src="images/laliga.svg" alt="La Liga Logo" />
-          <span>Spain La Liga</span>
-        </div>
-        <div class="league-card">
-          <img src="images/other.svg" alt="Other Leagues Logo" />
-          <span>Other Leagues</span>
+        <!-- MAIN CONTENT -->
+        <div class="content">
+          <header class="hero">
+            <h1>
+              Welcome to the <span class="highlight">BEST FOOTBALL TIPS</span>
+              online!
+            </h1>
+            <p>
+              Where you can find free and paid tipsters with real statistics.
+            </p>
+          </header>
+
+          <section class="latest-tips">These are the latest tips</section>
+
+          <div class="leagues">
+            <h1>Betting predictions from your favourite league!</h1>
+
+            <div class="leagues-grid">
+              <div class="league-card">
+                <img src="images/premierleague.svg" alt="Premier League Logo" />
+                <span>Premier League</span>
+              </div>
+              <div class="league-card">
+                <img src="images/seriea.svg" alt="Serie A Logo" />
+                <span>Italy Serie A</span>
+              </div>
+              <div class="league-card">
+                <img src="images/bundesliga.svg" alt="Bundesliga Logo" />
+                <span>Germany Bundesliga</span>
+              </div>
+              <div class="league-card">
+                <img src="images/ligue1.svg" alt="Ligue 1 Logo" />
+                <span>France Ligue1</span>
+              </div>
+              <div class="league-card">
+                <img src="images/laliga.svg" alt="La Liga Logo" />
+                <span>Spain La Liga</span>
+              </div>
+              <div class="league-card">
+                <img src="images/other.svg" alt="Other Leagues Logo" />
+                <span>Other Leagues</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
