@@ -13,12 +13,18 @@ mongoose
   .catch((error) => console.log(error));
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5000", "http://localhost:5000"],
+    credentials: true, // ⬅ MUST HAVE
+  })
+);
+
 app.use(express.json());
-
 app.use(cookieParser());
+
 app.use("/api/auth", authRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
