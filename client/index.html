@@ -4,34 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
+    <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/sidebar/sidebar.js" defer></script>
     <title>Home</title>
   </head>
   <body>
     <div class="page-wrapper">
-      <!-- NAVBAR -->
-      <nav class="nav">
-        <div class="nav2">
-          <a href="/index.html" class="active">Home</a>
-          <a href="./pages/add-tip/add-tip.html">Add Tip</a>
-          <a href="./pages/all-tips/all-tips.html">All Tips</a>
-          <a href="./pages/my-profile/my-profile.html">My Profile</a>
-          <a href="/pages/register/register.html">Register</a>
-          <a href="./pages/login/login.html">Log in</a>
-        </div>
-      </nav>
+      <div id="navbar-container"></div>
 
       <div class="layout">
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-          <a href="#">Feed</a>
-          <a href="#">Premier League</a>
-          <a href="#">Italy Serie A</a>
-          <a href="#">Spain La Liga</a>
-          <a href="#">Germany Bundesliga</a>
-          <a href="#">France Ligue 1</a>
-          <a href="#">Other Leagues</a>
-          <a href="#">Tipsters</a>
-        </aside>
+        <div id="sidebar-container"></div>
 
         <!-- MAIN CONTENT -->
         <div class="content">
