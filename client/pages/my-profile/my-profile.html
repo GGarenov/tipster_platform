@@ -5,229 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./my-profile.css" />
     <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/sidebar/sidebar.js" defer></script>
     <title>My Profile</title>
   </head>
   <body>
-    <div id="navbar-container"></div>
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar_content">
-        <a href="#">Publish new prediction</a>
-        <a href="#">Settings</a>
-        <a href="#">History</a>
-        <a href="#">Following</a>
-        <a href="#">Followers</a>
-        <a href="#">Log out</a>
+    <div class="page-wrapper">
+      <div id="navbar-container"></div>
+      <div class="layout">
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+          <h1 class="page-title">Username's Profile</h1>
+
+          <section class="profile-section">
+            <div class="profile-left">
+              <div class="profile-avatar">
+                <img src="../../images/bundesliga.svg" alt="Profile Avatar" />
+              </div>
+              <h2 class="username">@Username</h2>
+            </div>
+
+            <div class="profile-stats">
+              <div class="stat-box">
+                <span class="stat-number">20</span>
+                <span class="stat-label">Picks</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">+150</span>
+                <span class="stat-label">Profit</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">10%</span>
+                <span class="stat-label">ROI</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">35</span>
+                <span class="stat-label">Followers</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="latest-results">
+            <h2 class="section-title">Latest Results</h2>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 2 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge win">WIN</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Manchester United vs Liverpool</p>
+                <p><strong>Prediction:</strong> Over 2.5 goals</p>
+                <p><strong>Odds:</strong> 1.80</p>
+                <p>
+                  <strong>Analysis:</strong> Expected an open game with
+                  attacking football, and both teams delivered.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 1 day ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge loss">LOSS</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
+                <p><strong>Prediction:</strong> BTTS</p>
+                <p><strong>Odds:</strong> 1.95</p>
+                <p>
+                  <strong>Analysis:</strong> Barcelona failed to convert their
+                  chances, even though both teams had shots.
+                </p>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 2 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge win">WIN</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Manchester United vs Liverpool</p>
+                <p><strong>Prediction:</strong> Over 2.5 goals</p>
+                <p><strong>Odds:</strong> 1.80</p>
+                <p>
+                  <strong>Analysis:</strong> Expected an open game with
+                  attacking football, and both teams delivered.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 1 day ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge loss">LOSS</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
+                <p><strong>Prediction:</strong> BTTS</p>
+                <p><strong>Odds:</strong> 1.95</p>
+                <p>
+                  <strong>Analysis:</strong> Barcelona failed to convert their
+                  chances, even though both teams had shots.
+                </p>
+              </div>
+            </div>
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 2 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge win">WIN</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Manchester United vs Liverpool</p>
+                <p><strong>Prediction:</strong> Over 2.5 goals</p>
+                <p><strong>Odds:</strong> 1.80</p>
+                <p>
+                  <strong>Analysis:</strong> Expected an open game with
+                  attacking football, and both teams delivered.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-left">
+                  <img
+                    src="../../images/bundesliga.svg"
+                    alt="avatar"
+                    class="result-avatar"
+                  />
+                  <div class="result-info">
+                    <span class="result-username">@Username</span>
+                    <span class="result-time">Published 1 day ago</span>
+                  </div>
+                </div>
+
+                <div class="result-badge loss">LOSS</div>
+              </div>
+
+              <div class="result-body">
+                <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
+                <p><strong>Prediction:</strong> BTTS</p>
+                <p><strong>Odds:</strong> 1.95</p>
+                <p>
+                  <strong>Analysis:</strong> Barcelona failed to convert their
+                  chances, even though both teams had shots.
+                </p>
+              </div>
+            </div>
+          </section>
+          <button class="show-more-btn">Show More Results</button>
+        </main>
+
+        <script>
+          const sidebar = document.getElementById("sidebar");
+          const menuBtn = document.getElementById("menuBtn");
+
+          menuBtn.addEventListener("click", () =>
+            sidebar.classList.toggle("open")
+          );
+        </script>
       </div>
-    </aside>
-
-    <main class="main-content">
-      <h1 class="page-title">Username's Profile</h1>
-
-      <section class="profile-section">
-        <div class="profile-left">
-          <div class="profile-avatar">
-            <img src="../../images/bundesliga.svg" alt="Profile Avatar" />
-          </div>
-          <h2 class="username">@Username</h2>
-        </div>
-
-        <div class="profile-stats">
-          <div class="stat-box">
-            <span class="stat-number">20</span>
-            <span class="stat-label">Picks</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">+150</span>
-            <span class="stat-label">Profit</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">10%</span>
-            <span class="stat-label">ROI</span>
-          </div>
-          <div class="stat-box">
-            <span class="stat-number">35</span>
-            <span class="stat-label">Followers</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="latest-results">
-        <h2 class="section-title">Latest Results</h2>
-
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 2 hours ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge win">WIN</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Manchester United vs Liverpool</p>
-            <p><strong>Prediction:</strong> Over 2.5 goals</p>
-            <p><strong>Odds:</strong> 1.80</p>
-            <p>
-              <strong>Analysis:</strong> Expected an open game with attacking
-              football, and both teams delivered.
-            </p>
-          </div>
-        </div>
-
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 1 day ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge loss">LOSS</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
-            <p><strong>Prediction:</strong> BTTS</p>
-            <p><strong>Odds:</strong> 1.95</p>
-            <p>
-              <strong>Analysis:</strong> Barcelona failed to convert their
-              chances, even though both teams had shots.
-            </p>
-          </div>
-        </div>
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 2 hours ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge win">WIN</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Manchester United vs Liverpool</p>
-            <p><strong>Prediction:</strong> Over 2.5 goals</p>
-            <p><strong>Odds:</strong> 1.80</p>
-            <p>
-              <strong>Analysis:</strong> Expected an open game with attacking
-              football, and both teams delivered.
-            </p>
-          </div>
-        </div>
-
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 1 day ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge loss">LOSS</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
-            <p><strong>Prediction:</strong> BTTS</p>
-            <p><strong>Odds:</strong> 1.95</p>
-            <p>
-              <strong>Analysis:</strong> Barcelona failed to convert their
-              chances, even though both teams had shots.
-            </p>
-          </div>
-        </div>
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 2 hours ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge win">WIN</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Manchester United vs Liverpool</p>
-            <p><strong>Prediction:</strong> Over 2.5 goals</p>
-            <p><strong>Odds:</strong> 1.80</p>
-            <p>
-              <strong>Analysis:</strong> Expected an open game with attacking
-              football, and both teams delivered.
-            </p>
-          </div>
-        </div>
-
-        <div class="result-card">
-          <div class="result-header">
-            <div class="result-left">
-              <img
-                src="../../images/bundesliga.svg"
-                alt="avatar"
-                class="result-avatar"
-              />
-              <div class="result-info">
-                <span class="result-username">@Username</span>
-                <span class="result-time">Published 1 day ago</span>
-              </div>
-            </div>
-
-            <div class="result-badge loss">LOSS</div>
-          </div>
-
-          <div class="result-body">
-            <p><strong>Match:</strong> Real Madrid vs Barcelona</p>
-            <p><strong>Prediction:</strong> BTTS</p>
-            <p><strong>Odds:</strong> 1.95</p>
-            <p>
-              <strong>Analysis:</strong> Barcelona failed to convert their
-              chances, even though both teams had shots.
-            </p>
-          </div>
-        </div>
-      </section>
-      <button class="show-more-btn">Show More Results</button>
-    </main>
-
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const menuBtn = document.getElementById("menuBtn");
-
-      menuBtn.addEventListener("click", () => sidebar.classList.toggle("open"));
-    </script>
+    </div>
   </body>
 </html>

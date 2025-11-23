@@ -5,75 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="all-tips.css" />
     <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/sidebar/sidebar.js" defer></script>
+    <script src="/components/tips-card/tipsCard.js" defer></script>
 
     <title>All Football Tips</title>
   </head>
   <body>
-    <div id="navbar-container"></div>
+    <div class="page-wrapper">
+      <div id="navbar-container"></div>
+      <div class="layout">
+        <div id="sidebar-container"></div>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar_content">
-        <a href="#">Feed</a>
-        <a href="#">Premier League</a>
-        <a href="#">Italy Serie A</a>
-        <a href="#">Spain La Liga</a>
-        <a href="#">Germany Bundesliga</a>
-        <a href="#">France Ligue 1</a>
-        <a href="#">Other Leagues</a>
-        <a href="#">Tipsters</a>
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="mainContent">
+          <h1 class="page-title">Current Football Tips</h1>
+          <div id="tips-card"></div>
+        </main>
       </div>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="main-content" id="mainContent">
-      <h1 class="page-title">Current Football Tips</h1>
-
-      <div class="tip-card">
-        <div class="tip-header">
-          <div class="avatar-section">
-            <img
-              src="avatars/avatar1.jpg"
-              alt="Tipster"
-              class="tipster-avatar"
-            />
-            <div class="tipster-stats">
-              <span class="tipsterName">Tipster1</span>
-              <span>Number of picks: 150</span>
-              <span>ROI: 20%</span>
-              <span>Current rank: 128th</span>
-            </div>
-            <button class="follow-btn">Follow</button>
-          </div>
-
-          <div class="tip-info">
-            <div class="tipster-name">
-              Tipster1 published a new pick
-              <span class="time-posted">10 mins ago</span>
-            </div>
-            <div class="match-details">
-              <p><strong>Match:</strong> Manchester United vs Liverpool</p>
-              <p><strong>Prediction:</strong> Over 2.5 goals</p>
-              <p><strong>Odds:</strong> 1.80</p>
-              <p>
-                <strong>Analysis:</strong> Both of the players are going to
-                attack and strike for the 3 points.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <script>
-      const sidebar = document.getElementById("sidebar");
-      const menuBtn = document.getElementById("menuBtn");
-      const mainContent = document.getElementById("mainContent");
-
-      menuBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
-        mainContent.classList.toggle("expanded");
-      });
-    </script>
+    </div>
   </body>
 </html>

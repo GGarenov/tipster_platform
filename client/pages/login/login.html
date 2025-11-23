@@ -6,41 +6,48 @@
     <link rel="stylesheet" href="./login.css" />
     <script src="login.js" defer></script>
     <script src="/components/navbar/navbar.js" defer></script>
+    <script src="/components/sidebar/sidebar.js" defer></script>
     <title>Login</title>
   </head>
   <body>
-    <div id="navbar-container"></div>
+    <div class="page-wrapper">
+      >
+      <div id="navbar-container"></div>
+      <div class="layout">
+        <div id="sidebar-container"></div>
 
-    <main class="container">
-      <h1 class="title">Login</h1>
-      <p>
-        Please login into the platform to see all the features like tips,
-        analysis and so on.
-      </p>
+        <main class="container">
+          <h1 class="title">Login</h1>
+          <p>
+            Please login into the platform to see all the features like tips,
+            analysis and so on.
+          </p>
 
-      <form id="login" class="form">
-        <label>
-          Email:
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email here!"
-            required
-          />
-        </label>
+          <form id="login" class="form">
+            <label>
+              Email:
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email here!"
+                required
+              />
+            </label>
 
-        <label>
-          Password:
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password here!"
-            required
-          />
-        </label>
+            <label>
+              Password:
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password here!"
+                required
+              />
+            </label>
 
-        <button type="submit">Login</button>
-      </form>
-    </main>
+            <button type="submit">Login</button>
+          </form>
+        </main>
+      </div>
+    </div>
   </body>
 </html>
