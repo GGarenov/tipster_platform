@@ -1,0 +1,36 @@
+/* Center the Login Card in the middle of the screen */
+.login-container {
+  min-height: 100vh;
+  padding-top: 60px; /* Account for the fixed Navbar */
+  padding-bottom: 60px;
+}
+
+.login-card {
+  max-width: 400px; /* Keep the card a manageable size */
+  width: 90%;
+  /* Use dark theme variables defined in index.css */
+  background-color: var(--bg-card) !important;
+  border: 1px solid #333;
+}
+
+/* Style for Form Controls (Inputs) to match dark theme */
+.login-card .form-control {
+  background-color: var(--bg-input);
+  border: 1px solid #444;
+  color: var(--text-main);
+}
+
+.login-card .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.login-card .form-control:focus {
+  background-color: var(--bg-input);
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 0.25rem rgba(9, 132, 227, 0.25); /* Custom focus color */
+}
+
+/* Override the link color */
+.login-card a {
+  color: var(--accent-green) !important;
+}
