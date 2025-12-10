@@ -1,0 +1,46 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+  /* Use the variables we defined in index.css */
+  background-color: var(--bg-card);
+  border-bottom: 1px solid #333;
+  padding: 0.75rem 0;
+}
+
+/* Brand Logo Styling */
+.brand-text {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  color: var(--text-main) !important;
+}
+
+/* Nav Links */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--text-muted); /* Grey by default */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--text-main); /* White on hover */
+}
+
+/* Dropdown Menu (Bootstrap Override for Dark Mode) */
+.dropdown-menu {
+  background-color: var(--bg-card);
+  border: 1px solid #444;
+}
+
+.dropdown-item {
+  color: var(--text-main);
+}
+
+.dropdown-item:hover {
+  background-color: #333; /* Dark grey hover */
+  color: #fff;
+}
+
+/* Mobile Toggle Button fix */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}

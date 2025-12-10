@@ -1,0 +1,92 @@
+.sidebar-wrapper {
+  position: fixed;
+  top: 65px; /* Adjust this to sit right below your Navbar height */
+  left: 0;
+  height: calc(100vh - 65px); /* Full height minus the Navbar height */
+  background-color: var(--bg-card); /* Dark background */
+  padding-top: 15px;
+  border-right: 1px solid #333;
+  transition: width 0.3s ease; /* Smooth transition for opening/closing */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+  z-index: 999; /* Ensure it stays above main content */
+}
+
+/* Open State (Wide) */
+.sidebar-wrapper.open {
+  width: 250px;
+}
+
+/* Closed State (Narrow, Icon-only) */
+.sidebar-wrapper.closed {
+  width: 70px;
+  padding: 15px 5px; /* Reduce padding when closed */
+}
+
+/* Sidebar Toggle Button */
+.toggle-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--text-main) !important;
+}
+
+.sidebar-wrapper.closed .toggle-button {
+  right: 18px; /* Center the button better when collapsed */
+}
+
+/* Sidebar Items */
+.sidebar-item,
+.sidebar-dropdown-header {
+  color: var(--text-muted) !important;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-item:hover,
+.sidebar-dropdown-header:hover {
+  background-color: #333; /* Darker hover effect */
+  color: var(--text-main) !important;
+}
+
+/* Icons when sidebar is closed */
+.sidebar-wrapper.closed .sidebar-item span {
+  display: none;
+}
+.sidebar-wrapper.closed .sidebar-item {
+  justify-content: center;
+  padding: 10px 0;
+}
+.sidebar-wrapper.closed .sidebar-item .me-2 {
+  margin-right: 0 !important;
+}
+
+/* Leagues Dropdown Styles */
+.sidebar-dropdown-header {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.leagues-list {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.sidebar-sub-item {
+  background-color: #252525 !important;
+  border: none !important;
+  color: var(--text-muted);
+  padding: 8px 15px 8px 30px; /* Indent sub-items */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-sub-item:hover {
+  background-color: #333 !important;
+  color: var(--text-main);
+}
