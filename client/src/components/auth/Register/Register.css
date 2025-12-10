@@ -1,0 +1,35 @@
+/* Center the Register Card in the middle of the screen, similar to Login */
+.register-container {
+  min-height: 100vh;
+  padding-top: 60px; /* Account for the fixed Navbar */
+  padding-bottom: 60px;
+}
+
+.register-card {
+  max-width: 450px; /* Slightly wider to accommodate more fields */
+  width: 90%;
+  background-color: var(--bg-card) !important;
+  border: 1px solid #333;
+}
+
+/* Ensure form controls match the dark theme */
+.register-card .form-control {
+  background-color: var(--bg-input);
+  border: 1px solid #444;
+  color: var(--text-main);
+}
+
+.register-card .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.register-card .form-control:focus {
+  background-color: var(--bg-input);
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 0.25rem rgba(9, 132, 227, 0.25);
+}
+
+/* Styling for the link at the bottom */
+.register-card a {
+  color: var(--brand-blue) !important;
+}
