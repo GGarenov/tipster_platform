@@ -1,66 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
-    <script src="/components/navbar/navbar.js" defer></script>
-    <script src="/components/sidebar/sidebar.js" defer></script>
-    <title>Home</title>
+    <title>client</title>
   </head>
   <body>
-    <div class="page-wrapper">
-      <div id="navbar-container"></div>
-
-      <div class="layout">
-        <div id="sidebar-container"></div>
-
-        <!-- MAIN CONTENT -->
-        <div class="content">
-          <header class="hero">
-            <h1>
-              Welcome to the <span class="highlight">BEST FOOTBALL TIPS</span>
-              online!
-            </h1>
-            <p>
-              Where you can find free and paid tipsters with real statistics.
-            </p>
-          </header>
-
-          <section class="latest-tips">These are the latest tips</section>
-
-          <div class="leagues">
-            <h1>Betting predictions from your favourite league!</h1>
-
-            <div class="leagues-grid">
-              <div class="league-card">
-                <img src="images/premierleague.svg" alt="Premier League Logo" />
-                <span>Premier League</span>
-              </div>
-              <div class="league-card">
-                <img src="images/seriea.svg" alt="Serie A Logo" />
-                <span>Italy Serie A</span>
-              </div>
-              <div class="league-card">
-                <img src="images/bundesliga.svg" alt="Bundesliga Logo" />
-                <span>Germany Bundesliga</span>
-              </div>
-              <div class="league-card">
-                <img src="images/ligue1.svg" alt="Ligue 1 Logo" />
-                <span>France Ligue1</span>
-              </div>
-              <div class="league-card">
-                <img src="images/laliga.svg" alt="La Liga Logo" />
-                <span>Spain La Liga</span>
-              </div>
-              <div class="league-card">
-                <img src="images/other.svg" alt="Other Leagues Logo" />
-                <span>Other Leagues</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
