@@ -1,7 +1,20 @@
 import React, { useState } from "react";
-import { Container, Card, Form, Button, Alert } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Form,
+  Button,
+  Alert,
+  InputGroup,
+} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSignInAlt } from "react-icons/fa";
+import {
+  FaSignInAlt,
+  FaEnvelope,
+  FaLock,
+  FaGoogle,
+  FaGithub,
+} from "react-icons/fa";
 import "./Login.css";
 
 const Login = () => {
@@ -59,76 +72,100 @@ const Login = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center login-container">
-      <Card className="login-card p-4 shadow-lg">
-        <Card.Body>
-          <div className="text-center mb-4">
-            <FaSignInAlt size={40} className="text-green mb-3" />
-            <h2 className="fw-bold">Welcome Back</h2>
-            <p className="text-muted">
-              Sign in to publish tips and track your stats.
-            </p>
-          </div>
+    <div className="login-page">
+      <Container className="d-flex justify-content-center align-items-center login-container">
+        <Card className="auth-card shadow-lg">
+          <Card.Body>
+            <div className="auth-header text-center mb-3">
+              <div className="logo-circle mx-auto mb-3">
+                <FaSignInAlt size={28} className="logo-icon" />
+              </div>
+              <h3 className="mb-1">Welcome Back</h3>
+              <p className="text-muted small">
+                Sign in to publish tips and track your stats
+              </p>
+            </div>
 
-          {error && <Alert variant="danger">{error}</Alert>}
+            {error && <Alert variant="danger">{error}</Alert>}
 
-          <Form onSubmit={onSubmit}>
-            {/* Email Field */}
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email Address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter your email"
-                name="email"
-                value={email}
-                onChange={onChange}
-                required
-                className="dark-input"
-              />
-            </Form.Group>
+            <div className="d-grid gap-2 mb-3">
+              <Button
+                variant="outline-light"
+                className="social-btn google"
+                onClick={() => alert("Google login placeholder")}
+              >
+                <FaGoogle className="me-2" /> Continue with Google
+              </Button>
+              <Button
+                variant="outline-light"
+                className="social-btn github"
+                onClick={() => alert("GitHub login placeholder")}
+              >
+                <FaGithub className="me-2" /> Continue with GitHub
+              </Button>
+            </div>
 
-            {/* Password Field */}
-            <Form.Group className="mb-4" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={onChange}
-                required
-                className="dark-input"
-              />
-            </Form.Group>
+            <div className="divider">or</div>
 
-            {/* Submit Button */}
-            <Button
-              variant="primary"
-              type="submit"
-              className="w-100 fw-bold"
-              disabled={loading}
-            >
-              {loading ? (
-                "Logging In..."
-              ) : (
-                <>
-                  <FaSignInAlt className="me-2" /> Log In
-                </>
-              )}
-            </Button>
-          </Form>
+            <Form onSubmit={onSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="form-label">Email</Form.Label>
+                <InputGroup>
+                  <InputGroup.Text className="input-icon">
+                    <FaEnvelope />
+                  </InputGroup.Text>
+                  <Form.Control
+                    type="email"
+                    placeholder="your@email.com"
+                    name="email"
+                    value={email}
+                    onChange={onChange}
+                    required
+                    className="form-input"
+                  />
+                </InputGroup>
+              </Form.Group>
 
-          <div className="text-center mt-3">
-            <small className="text-muted">
-              Don't have an account?{" "}
-              <Link to="/register" className="text-decoration-none text-green">
-                Register
-              </Link>
-            </small>
-          </div>
-        </Card.Body>
-      </Card>
-    </Container>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label className="form-label">Password</Form.Label>
+                <InputGroup>
+                  <InputGroup.Text className="input-icon">
+                    <FaLock />
+                  </InputGroup.Text>
+                  <Form.Control
+                    type="password"
+                    placeholder="Enter password"
+                    name="password"
+                    value={password}
+                    onChange={onChange}
+                    required
+                    className="form-input"
+                  />
+                </InputGroup>
+              </Form.Group>
+
+              <Button
+                variant="primary"
+                type="submit"
+                className="w-100 btn-cta fw-bold"
+                disabled={loading}
+              >
+                {loading ? "Logging In..." : "Log In"}
+              </Button>
+            </Form>
+
+            <div className="text-center mt-3">
+              <small className="text-muted">
+                Don't have an account?{" "}
+                <Link to="/register" className="link-register">
+                  Create one
+                </Link>
+              </small>
+            </div>
+          </Card.Body>
+        </Card>
+      </Container>
+    </div>
   );
 };
 
