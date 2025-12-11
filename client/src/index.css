@@ -79,3 +79,14 @@ body {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
   border-left: 4px solid var(--accent-cyan);
 }
+
+.main-content {
+  /* Ensures content starts right next to the open sidebar and fills remaining width */
+  margin-left: 250px; /* Width of the open sidebar */
+  padding: 20px;
+  width: 100%;
+  min-height: calc(
+    100vh - 65px
+  ); /* Ensure it goes to the bottom of the screen */
+  transition: margin-left 0.3s ease;
+}
