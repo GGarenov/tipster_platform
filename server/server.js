@@ -1,11 +1,9 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import cors from "cors";
-import authRouter from "./routes/auth/auth-routes.js";
-import cookieParser from "cookie-parser";
-
-dotenv.config();
+const express = require("express");
+const mongoose = require("mongoose");
+require("dotenv").config();
+const cors = require("cors");
+const authRouter = require("./routes/auth/auth-routes.js");
+const cookieParser = require("cookie-parser");
 
 mongoose
   .connect(process.env.MONGODB_URI)

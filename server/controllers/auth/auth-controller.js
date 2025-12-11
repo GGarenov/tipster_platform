@@ -1,6 +1,6 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import User from "../../models/User.js";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const User = require("../../models/User.js");
 
 const JWT_SECRET_KEY =
   process.env.JWT_SECRET_KEY || "your_fallback_secret_for_dev_only";
@@ -11,7 +11,7 @@ if (!process.env.JWT_SECRET_KEY) {
   );
 }
 
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
   const { userName, email, password } = req.body;
 
   try {
@@ -46,7 +46,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -106,7 +106,7 @@ export const loginUser = async (req, res) => {
   }
 };
 
-export const logoutUser = (req, res) => {
+const logoutUser = (req, res) => {
   res
     .clearCookie("token", {
       httpOnly: true,
@@ -119,7 +119,7 @@ export const logoutUser = (req, res) => {
     });
 };
 
-export const authMiddleware = async (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
   const token = req.cookies.token;
   if (!token)
     return res.status(401).json({
@@ -137,4 +137,11 @@ export const authMiddleware = async (req, res, next) => {
       message: "Unauthorised user!",
     });
   }
+};
+
+module.exports = {
+  registerUser,
+  loginUser,
+  logoutUser,
+  authMiddleware,
 };
