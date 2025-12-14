@@ -1,75 +1,48 @@
-import React, { useState } from "react";
-import {
-  Container,
-  Card,
-  Form,
-  Button,
-  Alert,
-  InputGroup,
-} from "react-bootstrap";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  FaSignInAlt,
-  FaEnvelope,
-  FaLock,
-  FaGoogle,
-  FaGithub,
-} from "react-icons/fa";
+import { Container, Card, Form, Button, InputGroup } from "react-bootstrap";
+import { FaSignInAlt, FaGoogle, FaGithub } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { loginUser } from "../../../store/auth-slice";
+import { useDispatch, useSelector } from "react-redux";
 import "./Login.css";
 
-const Login = () => {
+const initialState = {
+  email: "",
+  password: "",
+};
+
+function AuthLogin() {
+  const [formData, setFormData] = useState(initialState);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
-  // State for form inputs
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  // State for messages
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const { email, password } = formData;
-
-  // Handle input changes
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+  function onSubmit(event) {
+    event.preventDefault();
 
-    // --- TODO: API CALL LOGIC ---
-    try {
-      // 1. You will use Axios here (once configured in src/services/api.js)
-      // Example: const res = await axios.post('/api/auth/login', { email, password });
-
-      // MOCK LOGIN SUCCESS FOR NOW
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API delay
-
-      if (email === "test@example.com" && password === "password") {
-        // 2. Save the token (JWT) you get from the backend response
-        localStorage.setItem("token", "MOCK_JWT_TOKEN");
-
-        // 3. Update global state (AuthContext)
-
-        // 4. Redirect to the main feed/dashboard
-        navigate("/");
+    dispatch(loginUser(formData)).then((data) => {
+      if (data?.payload?.success) {
+        const role = data.payload.user?.role;
+        toast.success(data.payload.message || "Logged in", { theme: "dark" });
+        if (role === "admin") {
+          navigate("/admin/dashboard");
+        } else {
+          navigate("/");
+        }
       } else {
-        throw new Error("Invalid email or password.");
+        const message =
+          data?.payload?.message ||
+          data?.error?.message ||
+          "Login failed. Check your credentials.";
+        toast.error(message, { theme: "dark" });
       }
-    } catch (err) {
-      console.error(err);
-      // Handle actual network or validation errors from the backend here
-      setError(err.message || "Login failed. Please check your credentials.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    });
+  }
 
   return (
     <div className="login-page">
@@ -85,8 +58,6 @@ const Login = () => {
                 Sign in to publish tips and track your stats
               </p>
             </div>
-
-            {error && <Alert variant="danger">{error}</Alert>}
 
             <div className="d-grid gap-2 mb-3">
               <Button
@@ -108,17 +79,15 @@ const Login = () => {
             <div className="divider">or</div>
 
             <Form onSubmit={onSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId={`formBasicEmail`}>
                 <Form.Label className="form-label">Email</Form.Label>
                 <InputGroup>
-                  <InputGroup.Text className="input-icon">
-                    <FaEnvelope />
-                  </InputGroup.Text>
+                  <InputGroup.Text className="input-icon"></InputGroup.Text>
                   <Form.Control
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="Enter your email"
                     name="email"
-                    value={email}
+                    value={formData.email}
                     onChange={onChange}
                     required
                     className="form-input"
@@ -126,17 +95,15 @@ const Login = () => {
                 </InputGroup>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId={`formBasicPassword`}>
                 <Form.Label className="form-label">Password</Form.Label>
                 <InputGroup>
-                  <InputGroup.Text className="input-icon">
-                    <FaLock />
-                  </InputGroup.Text>
+                  <InputGroup.Text className="input-icon"></InputGroup.Text>
                   <Form.Control
                     type="password"
-                    placeholder="Enter password"
+                    placeholder="Enter your password"
                     name="password"
-                    value={password}
+                    value={formData.password}
                     onChange={onChange}
                     required
                     className="form-input"
@@ -148,9 +115,9 @@ const Login = () => {
                 variant="primary"
                 type="submit"
                 className="w-100 btn-cta fw-bold"
-                disabled={loading}
+                disabled={isLoading}
               >
-                {loading ? "Logging In..." : "Log In"}
+                {isLoading ? "Logging In..." : "Log In"}
               </Button>
             </Form>
 
@@ -167,6 +134,6 @@ const Login = () => {
       </Container>
     </div>
   );
-};
+}
 
-export default Login;
+export default AuthLogin;

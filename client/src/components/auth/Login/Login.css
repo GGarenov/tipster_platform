@@ -128,16 +128,23 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.04);
   color: white;
-  height: 44px;
+}
+
+.form-input:focus {
+  color: whiteda;
+  outline: none;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.9);
+  background: rgba(255, 255, 255, 0.04);
 }
 .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .form-input:focus {
   outline: none;
   box-shadow: 0 6px 18px rgba(124, 58, 237, 0.08);
   border: 1px solid rgba(124, 58, 237, 0.9);
-  background: rgba(255, 255, 255, 0.02);
+  background: white);
 }
 
 .form-label {
