@@ -17,23 +17,26 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import "./Register.css";
+import { registerUser } from "../../../store/auth-slice";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const navigate = useNavigate();
 
-  // State for form inputs (add username for your platform)
+  // State for form inputs (backend expects `userName`)
   const [formData, setFormData] = useState({
-    username: "",
+    userName: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.auth.isLoading);
   const [validated, setValidated] = useState(false); // For Bootstrap validation
 
-  const { username, email, password, confirmPassword } = formData;
+  const { userName, email, password, confirmPassword } = formData;
 
   // Handle input changes
   const onChange = (e) => {
@@ -41,48 +44,39 @@ const Register = () => {
   };
 
   // Handle form submission
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     const form = e.currentTarget;
     e.preventDefault();
 
-    // 1. Basic Client-Side Validation
+    // basic client-side validation
     if (form.checkValidity() === false || password !== confirmPassword) {
       e.stopPropagation();
       setValidated(true);
       if (password !== confirmPassword) {
-        setError("Passwords do not match.");
+        toast.error("Passwords do not match.", { theme: "dark" });
       } else {
-        setError("Please fill out all required fields.");
+        toast.error("Please fill out all required fields.", { theme: "dark" });
       }
       return;
     }
 
-    setValidated(true); // Enable validation styling
-    setLoading(true);
-    setError(null);
+    setValidated(true);
 
-    // --- TODO: API CALL LOGIC ---
-    try {
-      // 2. You will use Axios here to hit your backend:
-      // Example: const res = await axios.post('/api/auth/register', { username, email, password });
-
-      // MOCK REGISTRATION SUCCESS FOR NOW
-      await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate API delay
-
-      console.log("Registration Successful for:", username);
-
-      // Redirect user to login page after successful registration
-      navigate("/login");
-    } catch (err) {
-      console.error(err);
-      // Handle specific backend errors (e.g., email already exists)
-      setError(
-        err.response?.data?.message ||
-          "Registration failed. Try a different username/email."
-      );
-    } finally {
-      setLoading(false);
-    }
+    // Dispatch the register thunk. Backend expects `userName`, `email`, `password`.
+    dispatch(registerUser({ userName, email, password })).then((data) => {
+      if (data?.payload?.success) {
+        toast.success(data.payload.message || "Registration successful", {
+          theme: "dark",
+        });
+        navigate("/login");
+      } else {
+        const message =
+          data?.payload?.message ||
+          data?.error?.message ||
+          "Registration failed.";
+        toast.error(message, { theme: "dark" });
+      }
+    });
   };
 
   return (
@@ -100,7 +94,7 @@ const Register = () => {
               </p>
             </div>
 
-            {error && <Alert variant="danger">{error}</Alert>}
+            {/* Keep inline alerts disabled; use toast for feedback */}
 
             <div className="d-grid gap-2 mb-3">
               <Button
@@ -131,8 +125,8 @@ const Register = () => {
                   <Form.Control
                     type="text"
                     placeholder="Choose a username"
-                    name="username"
-                    value={username}
+                    name="userName"
+                    value={userName}
                     onChange={onChange}
                     required
                     className="form-input"
@@ -212,9 +206,9 @@ const Register = () => {
                 variant="primary"
                 type="submit"
                 className="w-100 btn-cta fw-bold"
-                disabled={loading}
+                disabled={isLoading}
               >
-                {loading ? "Registering..." : "Create Account"}
+                {isLoading ? "Registering..." : "Create Account"}
               </Button>
             </Form>
 

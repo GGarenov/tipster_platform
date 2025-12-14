@@ -3,7 +3,8 @@ import axios from "axios";
 
 const initialState = {
   isAuthenticated: false,
-  isLoading: true,
+  // Start not-loading so form buttons are enabled on initial render
+  isLoading: false,
   user: null,
 };
 
