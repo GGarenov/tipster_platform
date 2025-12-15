@@ -2,16 +2,23 @@ import React from "react";
 import { Navbar, Nav, Container, Button, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaFutbol, FaUserCircle, FaPlus } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../../../store/auth-slice";
 import "./Navbar.css";
 
 const Navigation = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const isLoggedIn = false;
-  const user = { username: "TipsterKing" };
+  const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
+  const user = useSelector((state) => state.auth.user);
 
-  const handleLogout = () => {
-    console.log("Logging out...");
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+    } catch (err) {
+      // ignore errors; still navigate to login
+    }
     navigate("/login");
   };
 
@@ -60,7 +67,7 @@ const Navigation = () => {
                   title={
                     <span className="d-flex align-items-center">
                       <FaUserCircle size={20} className="me-2 text-muted" />
-                      {user.username}
+                      {user?.userName || user?.username || "Profile"}
                     </span>
                   }
                   id="user-nav-dropdown"

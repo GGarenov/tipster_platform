@@ -5,8 +5,16 @@ import Home from "./pages/home/Home";
 import Sidebar from "./components/layout/Sidebar/Sidebar";
 import Login from "./components/auth/Login/Login";
 import Register from "./components/auth/Register/Register";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { checkAuth } from "./store/auth-slice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
   return (
     <BrowserRouter>
       <Navigation />
